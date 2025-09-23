@@ -22,5 +22,11 @@ public class CrudApp1Application {
     }
 
     private void createStudent(StudentDAO studentDAO) {
+
+        //cream un nobiect Student
+
+        //Salvam obiectul Student in baza de date folosind DAO
+
+        //display ID of saved student
     }
 }
