@@ -4,6 +4,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import pixel.academy.crud_app1.dao.StudentDAO;
 
 @SpringBootApplication
 public class CrudApp1Application {
@@ -14,9 +15,12 @@ public class CrudApp1Application {
     }
 
     @Bean
-    public CommandLineRunner commandLineRunner(String[] args) {
+    public CommandLineRunner commandLineRunner(StudentDAO studentDAO) {
         return  runner -> {
-            System.out.println("Hello,world!");
+            createStudent(studentDAO);
         };
+    }
+
+    private void createStudent(StudentDAO studentDAO) {
     }
 }
