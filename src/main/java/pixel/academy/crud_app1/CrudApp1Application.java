@@ -4,6 +4,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
 import pixel.academy.crud_app1.dao.StudentDAO;
 import pixel.academy.crud_app1.entity.Student;
 
@@ -19,6 +20,7 @@ public class CrudApp1Application {
     public CommandLineRunner commandLineRunner(StudentDAO studentDAO) {
         return  runner -> {
             createStudent(studentDAO);
+
         };
     }
 
@@ -37,4 +39,19 @@ public class CrudApp1Application {
         //display ID of saved student
         System.out.println("Saved student.Generated id: " + newStudent.getId());
     }
+    private void createMultipleStudents(StudentDAO studentDAO) {
+
+        //cream mai multi studenti
+        System.out.println("Creating 3 student objects ...");
+        Student newStudent1 = new Student("Andrei", "Munteanu", "andrei@pixelacademy.md");
+        Student newStudent2 = new Student("Iulian", "Vataman", "iulian@pixelacademy.md");
+        Student newStudent3 = new Student("Maria", "Mirabele", "maria@pixelacademy.md");
+
+        //save objects in database
+        System.out.println("Saving the students ...");
+        studentDAO.save(newStudent1);
+        studentDAO.save(newStudent2);
+        studentDAO.save(newStudent3);
+    }
 }
+
