@@ -44,8 +44,8 @@ public class CrudApp1Application {
         //cream mai multi studenti
         System.out.println("Creating 3 student objects ...");
         Student newStudent1 = new Student("Andrei", "Munteanu", "andrei@pixelacademy.md");
-        Student newStudent2 = new Student("Iulian", "Vataman", "iulian@pixelacademy.md");
-        Student newStudent3 = new Student("Maria", "Mirabele", "maria@pixelacademy.md");
+        Student newStudent2 = new Student("Iulian", "Vataman" , "iulian@pixelacademy.md");
+        Student newStudent3 = new Student("Maria" , "Mirabele", "maria@pixelacademy.md");
 
         //save objects in database
         System.out.println("Saving the students ...");
