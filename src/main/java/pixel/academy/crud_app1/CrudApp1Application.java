@@ -54,5 +54,6 @@ public class CrudApp1Application {
         studentDAO.save(newStudent2);
         studentDAO.save(newStudent3);
     }
+
 }
 
