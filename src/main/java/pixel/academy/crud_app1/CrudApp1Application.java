@@ -20,10 +20,23 @@ public class CrudApp1Application {
     public CommandLineRunner commandLineRunner(StudentDAO studentDAO) {
         return  runner -> {
           //  createStudent(studentDAO);
-            createMultipleStudents(studentDAO);
+            //createMultipleStudents(studentDAO);
+            readStudent(studentDAO);
 
         };
     }
+
+         private void readStudent(StudentDAO studentDAO) {
+        //creaza un obiect de tip Student
+
+             //salveaza studentul in baza de date
+
+             //afiseaza id-ul studentului salvat
+
+             //recupereaza studentul pe baza ID-ului (PK)
+
+             //afiseaza detaliile studentului
+         }
 
     private void createStudent(StudentDAO studentDAO) {
 
