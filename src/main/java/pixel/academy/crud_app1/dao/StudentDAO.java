@@ -16,4 +16,6 @@ public interface StudentDAO {
 
     @Transactional
     void delete(Integer id);
+
+    int deleteAll();
 }

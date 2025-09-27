@@ -70,4 +70,10 @@ public class StudentDAOImplementation implements StudentDAO{
         //stergem studentul
         entityManager.remove(theStudent);
     }
+    @Override
+    @Transactional
+    public int deleteAll() {
+        int numRowsDelete = entityManager.createQuery("DELETE FROM Student").executeUpdate();
+        return 0;
+    }
 }
