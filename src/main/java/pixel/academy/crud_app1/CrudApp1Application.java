@@ -6,7 +6,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 import pixel.academy.crud_app1.dao.StudentDAO;
+import pixel.academy.crud_app1.dao.StudentDAOImplementation;
 import pixel.academy.crud_app1.entity.Student;
+
+import java.util.List;
 
 @SpringBootApplication
 public class CrudApp1Application {
@@ -21,12 +24,15 @@ public class CrudApp1Application {
         return  runner -> {
           //  createStudent(studentDAO);
             //createMultipleStudents(studentDAO);
-            readStudent(studentDAO);
+            //readStudent(studentDAO);
+            queryForStudents(studentDAO);
 
         };
     }
 
-         private void readStudent(StudentDAO studentDAO) {
+
+
+    private void readStudent(StudentDAO studentDAO) {
         //creaza un obiect de tip Student
              System.out.println("Creating new student object ...");
              Student newStudent = new Student("Mircea", "Popescu", "mircea@pixel.academy");
@@ -74,6 +80,16 @@ public class CrudApp1Application {
         studentDAO.save(newStudent1);
         studentDAO.save(newStudent2);
         studentDAO.save(newStudent3);
+    }
+    private void queryForStudents(StudentDAO studentDAO) {
+        //get the list of students
+        List<Student> theStudents = studentDAO.findAll();
+
+        //display the list of students
+        for (Student newStudent : theStudents) {
+            System.out.println(newStudent);
+
+        }
     }
 
 }
