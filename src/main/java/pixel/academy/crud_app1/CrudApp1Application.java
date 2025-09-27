@@ -103,13 +103,20 @@ public class CrudApp1Application {
             }
         }
     private void updateStudent(StudentDAO studentDAO) {
-        //find the student in the database using the ID (cheia primara)
+        //find the student in the database using the ID (PK)
+        int studentId = 1;
+        System.out.println("Getting student with id: " + studentId);
+        Student newStudent = studentDAO.findById(studentId);
 
         //modify firstName of the student "Ion"
+        System.out.println("Updating student ...");
+        newStudent.setFirstName("Ion");
 
         //save modified data in bd
+        studentDAO.update(newStudent);
 
         //display details of the updated student
+        System.out.println("Updated student: " + newStudent);
     }
 }
 
