@@ -26,7 +26,8 @@ public class CrudApp1Application {
             //createMultipleStudents(studentDAO);
             //readStudent(studentDAO);
            // queryForStudents(studentDAO);
-            queryForStudentsByLastName(studentDAO);
+           // queryForStudentsByLastName(studentDAO);
+            updateStudent(studentDAO);
 
         };
     }
@@ -101,5 +102,14 @@ public class CrudApp1Application {
                 System.out.println(newStudent);
             }
         }
+    private void updateStudent(StudentDAO studentDAO) {
+        //find the student in the database using the ID (cheia primara)
+
+        //modify firstName of the student "Ion"
+
+        //save modified data in bd
+
+        //display details of the updated student
+    }
 }
 
