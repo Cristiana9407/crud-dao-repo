@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import pixel.academy.crud_app1.entity.Student;
 
-import java.lang.reflect.Type;
 import java.util.List;
 
 @Repository
@@ -59,5 +58,11 @@ public class StudentDAOImplementation implements StudentDAO{
     @Transactional
     public void update(Student theStudent) {
      entityManager.merge(theStudent);
+    }
+
+    @Override
+    @Transactional
+    public void delete(Integer id) {
+
     }
 }

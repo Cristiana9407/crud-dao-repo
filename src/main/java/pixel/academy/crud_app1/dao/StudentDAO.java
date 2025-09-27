@@ -1,5 +1,6 @@
 package pixel.academy.crud_app1.dao;
 
+import jakarta.transaction.Transactional;
 import pixel.academy.crud_app1.entity.Student;
 
 import java.util.List;
@@ -13,4 +14,6 @@ public interface StudentDAO {
 
     void update(Student theStudent);
 
+    @Transactional
+    void delete(Integer id);
 }
